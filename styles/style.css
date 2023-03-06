@@ -1,0 +1,94 @@
+.wrapper {
+	min-height: 100vh;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #1c1917;
+	padding: 48px;
+}
+
+.carousel {
+	max-width: 1200px;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.carousel__image-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	cursor: pointer;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.carousel__image-container.dragging {
+	scroll-behavior: auto;
+	cursor: grab;
+}
+
+.carousel__img {
+	flex-shrink: 0;
+	height: 340px;
+	width: calc(100% / 3);
+	object-fit: cover;
+}
+
+.carousel__button {
+	background-color: white;
+	height: 44px;
+	width: 44px;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: absolute;
+}
+
+.carousel__button:first-child {
+	left: 0;
+	transform: translateX(-50%);
+	display: none;
+}
+
+.carousel__button:last-child {
+	right: 0;
+	transform: translateX(50%);
+}
+
+.carousel__button img {
+	width: 24px;
+	height: 24px;
+}
+
+.contacts {
+	color: white;
+	text-align: center;
+	opacity: 0.8;
+	margin-top: 32px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 6px;
+}
+
+.contacts a {
+	color: white;
+}
+
+@media screen and (max-width: 900px) {
+	.carousel__img {
+		width: calc(100% / 2);
+	}
+}
+
+@media screen and (max-width: 512px) {
+	.carousel__img {
+		width: 100%;
+	}
+}
